@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="svkreml.crypto.digest"
+       elementFormDefault="qualified">
+
+    <xs:element name="getDigestRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="input" type="xs:base64Binary"/>
+                <xs:element name="alg" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDigestResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="digestValue" type="xs:base64Binary"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDigestAlgorithmsRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getDigestAlgorithmsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="digestAlg" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
